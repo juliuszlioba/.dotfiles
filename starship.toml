@@ -1,0 +1,77 @@
+# ~/.config/starship.toml
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Change command timeout from 500 to 1000 ms
+command_timeout = 1000
+
+# Change the default prompt format
+format = """\
+(238)$env_var\
+$all(238)$character"""
+
+# Shows an icon that should be included by zshrc script based on the distribution or os
+[env_var.STARSHIP_DISTRO]
+format = '[$env_value](white) '
+variable = "STARSHIP_DISTRO"
+disabled = false
+
+# Shows the username
+[username]
+style_user = "white"
+style_root = "white"
+format = "[$user]($style) "
+disabled = false
+show_always = false
+
+[hostname]
+ssh_only = true
+format = "on [$hostname](bold yellow) "
+disabled = false
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = "Home ~"
+read_only_style = "197"
+read_only = " ReadOnly "
+format = "at [$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+symbol = "git "
+format = "via [$symbol $branch]($style) "
+truncation_length = 16
+truncation_symbol = "…/"
+style = "bold green"
+
+[git_commit]
+tag_symbol = " tag "
+
+[git_status]
+format = '[$all_status$ahead_behind]($style) '
+style = "bold green"
+conflicted = "-conflicted "
+untracked = "-untracked "
+ahead = "-ahead(${count})"
+behind = "-behind(${count})"
+stashed = "-stashed "
+modified = "-modified "
+staged = '[++\($count\)](green)'
+renamed = "-renamed "
+deleted = "-deleted "
+
+[docker_context]
+symbol = "docker "
+
+[nodejs]
+symbol = "nodejs "
+
+[package]
+symbol = "pkg "
+
+[php]
+symbol = "php "
+
+[status]
+symbol = "[x](bold red) "
