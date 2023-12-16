@@ -40,7 +40,7 @@ format = "at [$path]($style)[$read_only]($read_only_style) "
 
 [git_branch]
 symbol = "git "
-format = "via [$symbol $branch]($style) "
+format = "on [git $branch]($style)"
 truncation_length = 16
 truncation_symbol = "…/"
 style = "bold green"
